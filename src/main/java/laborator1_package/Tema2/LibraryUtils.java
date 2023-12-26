@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Random;
 import java.util.Set;
 import static java.util.stream.Collectors.*;
@@ -100,10 +101,9 @@ public class LibraryUtils {
 		return books.values().stream().sorted(Comparator.comparing(Carte::titlul)).collect(toList());
 	}
 	
-	//TODO
-	public void getOldestBook() {
+	public Optional<Carte> getOldestBook() {
 		System.out.print("Cea mai veche carte: ");
-//		return books.values().stream().sorted(Comparator.comparing(Carte::anul));
+		return books.values().stream().sorted(Comparator.comparing(Carte::anul)).findFirst();
 	}
 
 	public HashMap<Integer, Carte> getBooks() {

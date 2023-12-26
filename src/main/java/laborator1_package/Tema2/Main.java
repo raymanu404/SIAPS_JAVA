@@ -18,14 +18,14 @@ public class Main {
 		System.out.println(library.getBooks());
 
 		// b) Sa se stearga o carte din colectia Map
-		library.removeBook(1);
+		//library.removeBook(1);
 		
 		// c) adaugare carte cu putIfAbsent
-		library.addBook(new Carte("Codu lui Da Vinci", "Dan Brown", 2003));
+		//library.addBook(new Carte("Codu lui Da Vinci", "Dan Brown", 2003));
 
 		// d) De salvat modificarile de mai sus in fisier JSON
 		String jsonFileNameOutput = filename.replace(jsonExtention, outputJsonFileFormat);		
-		library.saveInJsonFile(jsonFileNameOutput, library.getBooks());
+		//library.saveInJsonFile(jsonFileNameOutput, library.getBooks());
 
 		// e) Extrage lista de carti de catre autorul Yual Noah Harari
 		library.getBooksByAuthor("Harari").forEach(x ->{
@@ -39,7 +39,9 @@ public class Main {
 			System.out.println(x.titlul());
 		});
 				
-		// 7
+		// g) Afisare cea mai veche carte
+		System.out.println(library.getOldestBook().get());
+		
 	}
 
 }
