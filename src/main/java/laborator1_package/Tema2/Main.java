@@ -6,20 +6,39 @@ import laborator1_package.Common.Carte;
 
 public class Main {
 
+	static String filename = "src/main/resources/laborator_1/carti.json";
+	static String outputJsonFileFormat = "_output.json";
+	static String jsonExtention = ".json";
+	
 	public static void main(String[] args) {
-		// 1 Citire carti
-		HashMap<Integer, Carte> carti = Utils.citireCarti();
-		System.out.println(carti);
-
-		// 2
-		Utils.stergereCarte(carti, 1);
-		System.out.println(carti);
+		LibraryUtils library = new LibraryUtils(filename);	
 		
-		// 3
+		// a) Citire carti
+		library.readBooksFromJson();
+		System.out.println(library.getBooks());
 
-		// 4
-		// 5
-		// 6
+		// b) Sa se stearga o carte din colectia Map
+		library.removeBook(1);
+		
+		// c) adaugare carte cu putIfAbsent
+		library.addBook(new Carte("Codu lui Da Vinci", "Dan Brown", 2003));
+
+		// d) De salvat modificarile de mai sus in fisier JSON
+		String jsonFileNameOutput = filename.replace(jsonExtention, outputJsonFileFormat);		
+		library.saveInJsonFile(jsonFileNameOutput, library.getBooks());
+
+		// e) Extrage lista de carti de catre autorul Yual Noah Harari
+		library.getBooksByAuthor("Harari").forEach(x ->{
+			System.out.println("Titlu: " + x.titlul() + " --- autorul: " + x.autorul() + ", anul aparitiei: " + x.anul());
+		});
+		
+		System.out.println();
+		// f) Sa se afiseze ordonat dupa titlul cartii
+		var sortedByNameOfBook = library.sortByTitle();
+		sortedByNameOfBook.forEach(x -> {
+			System.out.println(x.titlul());
+		});
+				
 		// 7
 	}
 
