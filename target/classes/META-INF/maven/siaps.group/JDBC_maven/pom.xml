@@ -3,7 +3,7 @@
   <groupId>siaps.group</groupId>
   <artifactId>JDBC_maven</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>TestMaven1</name>
+  <name>TJ_Maven</name>
   
   	<properties>
 		 <maven.compiler.target>17</maven.compiler.target>

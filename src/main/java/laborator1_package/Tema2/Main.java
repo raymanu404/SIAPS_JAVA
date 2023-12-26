@@ -14,6 +14,7 @@ public class Main {
 		// 2
 		Utils.stergereCarte(carti, 1);
 		System.out.println(carti);
+		
 		// 3
 
 		// 4
