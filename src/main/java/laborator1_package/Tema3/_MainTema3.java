@@ -20,10 +20,9 @@ public class _MainTema3 {
 		// mobilier???
 		// furniture.printFurnitureByName("dulap");
 
-//		 d) Afișează estimativ numărul colilor de pal necesare pentru realizarea unui anumit corp
-//		    de mobile știind că o coală de pal are dimensiunea 2800 x 2070 mm (pentru simplitate
-//			  se va ţine cont doar de arie, nu şi de posibilitatea de a realiza tăieturile) 
-		
+		// d) Afișează estimativ numărul colilor de pal necesare pentru realizarea unui anumit corp
+		//	de mobile știind că o coală de pal are dimensiunea 2800 x 2070 mm (pentru simplitate
+		//	se va ţine cont doar de arie, nu şi de posibilitatea de a realiza tăieturile) ???
 		
 	}
 
