@@ -24,7 +24,7 @@ public class Main {
 		//library.addBook(new Carte("Codu lui Da Vinci", "Dan Brown", 2003));
 
 		// d) De salvat modificarile de mai sus in fisier JSON
-		String jsonFileNameOutput = filename.replace(jsonExtention, outputJsonFileFormat);		
+		//String jsonFileNameOutput = filename.replace(jsonExtention, outputJsonFileFormat);		
 		//library.saveInJsonFile(jsonFileNameOutput, library.getBooks());
 
 		// e) Extrage lista de carti de catre autorul Yual Noah Harari
