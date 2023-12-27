@@ -2,8 +2,6 @@ package laborator1_package.Tema1;
 
 import java.util.List;
 
-import laborator1_package.Common.Persoana;
-
 public class Main {
 	public static void main(String[] args) {
 		Persoana p1 = new Persoana("Oana", 23);

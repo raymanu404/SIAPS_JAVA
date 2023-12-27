@@ -2,8 +2,6 @@ package laborator1_package.Tema2;
 
 import java.util.HashMap;
 
-import laborator1_package.Common.Carte;
-
 public class Main {
 
 	static String filename = "src/main/resources/laborator_1/carti.json";

@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -17,16 +16,14 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import laborator1_package.Common.Carte;
-
 public class LibraryUtils {
 
 	
 	private File _jsonFile;
-	private HashMap<Integer, Carte> books;
+	private HashMap<Integer, Carte> _books;
 
 	public LibraryUtils(String fileName) {
-		books = new HashMap<Integer, Carte>();
+		_books = new HashMap<Integer, Carte>();
 		_jsonFile = new File(fileName);
 	}
 
@@ -39,7 +36,7 @@ public class LibraryUtils {
 					});
 
 			for (Map.Entry<Integer, Carte> entry : localData.entrySet()) {
-				books.putIfAbsent(entry.getKey(), entry.getValue());
+				_books.putIfAbsent(entry.getKey(), entry.getValue());
 			}
 
 		} catch (
@@ -60,8 +57,8 @@ public class LibraryUtils {
 	public void removeBook(Integer id) {
 
 		try {
-			if (books.containsKey(id)) {
-				books.remove(id);
+			if (_books.containsKey(id)) {
+				_books.remove(id);
 				System.out.println("Am sters cartea cu id-ul: " + id);
 			} else {
 				System.out.println("Cartea nu exista!");
@@ -75,7 +72,7 @@ public class LibraryUtils {
 	public void addBook(Carte carte) {
 		Random random = new Random();
 		int randomId = Math.abs(random.nextInt());
-		books.putIfAbsent(randomId, carte);
+		_books.putIfAbsent(randomId, carte);
 		
 		System.out.println("Carte adaugata");
 	}
@@ -92,21 +89,21 @@ public class LibraryUtils {
 	}
 	
 	public Set<Carte> getBooksByAuthor(String author) {
-		var output = books.values().stream().filter(x -> x.autorul().contains(author)).collect(toSet());
+		var output = _books.values().stream().filter(x -> x.autorul().contains(author)).collect(toSet());
 		return output;
 	}
 	
 	public List<Carte> sortByTitle() {
 		System.out.println("Ordonare crescatoare dupa titlu:\n");
-		return books.values().stream().sorted(Comparator.comparing(Carte::titlul)).collect(toList());
+		return _books.values().stream().sorted(Comparator.comparing(Carte::titlul)).collect(toList());
 	}
 	
 	public Optional<Carte> getOldestBook() {
 		System.out.print("Cea mai veche carte: ");
-		return books.values().stream().sorted(Comparator.comparing(Carte::anul)).findFirst();
+		return _books.values().stream().sorted(Comparator.comparing(Carte::anul)).findFirst();
 	}
 
 	public HashMap<Integer, Carte> getBooks() {
-		return books;
+		return _books;
 	}
 }

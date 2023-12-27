@@ -7,8 +7,6 @@ import java.util.List;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import laborator1_package.Common.Persoana;
-
 public class Utils {
 	public static void scriere(List<Persoana> lista) {
 		try {
